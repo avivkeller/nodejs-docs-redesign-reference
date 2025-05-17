@@ -24,3 +24,6 @@ This process will:
 3. Render it to HTML using `ReactDOMServer`.
 4. Inject the rendered output into `template.html`.
 5. Output the final result to `dist/output.html`.
+
+> [!NOTE]
+> The generated HTML is not interactive. That's not a bug: This is only a reference, interaction isn't really needed.
