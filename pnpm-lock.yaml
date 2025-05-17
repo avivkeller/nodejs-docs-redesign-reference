@@ -14,6 +14,9 @@ importers:
       '@node-core/ui-components':
         specifier: github:nodejs/nodejs.org#path:/packages/ui-components
         version: https://codeload.github.com/nodejs/nodejs.org/tar.gz/c35378059c2722b96c3070a34b4b007e52e431e0#path:/packages/ui-components(@types/react-dom@19.1.5(@types/react@19.1.4))(@types/react@19.1.4)(postcss@8.5.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@node-core/website-i18n':
+        specifier: github:nodejs/nodejs.org#path:packages/i18n
+        version: https://codeload.github.com/nodejs/nodejs.org/tar.gz/663fad95788c9e0b398423c86b608f3410c998d8#path:packages/i18n
       '@radix-ui/react-tabs':
         specifier: ^1.1.11
         version: 1.1.11(@types/react-dom@19.1.5(@types/react@19.1.4))(@types/react@19.1.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -166,6 +169,10 @@ packages:
     resolution: {path: /packages/ui-components, tarball: https://codeload.github.com/nodejs/nodejs.org/tar.gz/c35378059c2722b96c3070a34b4b007e52e431e0}
     version: 0.0.0
     engines: {node: '>=20'}
+
+  '@node-core/website-i18n@https://codeload.github.com/nodejs/nodejs.org/tar.gz/663fad95788c9e0b398423c86b608f3410c998d8#path:packages/i18n':
+    resolution: {path: packages/i18n, tarball: https://codeload.github.com/nodejs/nodejs.org/tar.gz/663fad95788c9e0b398423c86b608f3410c998d8}
+    version: 0.0.0
 
   '@radix-ui/number@1.1.1':
     resolution: {integrity: sha512-MkKCwxlXTgz6CFoJx3pCwn07GKp36+aZyu/u2Ln2VrA5DcdyCZkASEDBTd8x5whTQQL5CiYf4prXKLcgQdv29g==}
@@ -2554,6 +2561,8 @@ snapshots:
       - postcss
       - react
       - react-dom
+
+  '@node-core/website-i18n@https://codeload.github.com/nodejs/nodejs.org/tar.gz/663fad95788c9e0b398423c86b608f3410c998d8#path:packages/i18n': {}
 
   '@radix-ui/number@1.1.1': {}
 

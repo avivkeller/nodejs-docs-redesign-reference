@@ -5,6 +5,7 @@
   "dependencies": {
     "@node-core/mdx": "github:nodejs/nodejs.org#mdx-pkg&path:/packages/mdx",
     "@node-core/ui-components": "github:nodejs/nodejs.org#path:/packages/ui-components",
+    "@node-core/website-i18n": "github:nodejs/nodejs.org#path:packages/i18n",
     "@radix-ui/react-tabs": "^1.1.11",
     "@tailwindcss/postcss": "^4.1.7",
     "@types/node": "^22.15.18",
