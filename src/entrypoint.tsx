@@ -19,7 +19,7 @@ async function build() {
     CodeTabs,
     pre: CodeBox,
     blockquote: Blockquote,
-    Stability: AlertBox,
+    AlertBox,
   });
 
   const rendered = ReactDOMServer.renderToString(Comp);

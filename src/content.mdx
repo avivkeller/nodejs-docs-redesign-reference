@@ -1,10 +1,9 @@
+Missing llm_description field or paragraph node in the API doc entry at doc/api/async_context.md
 # Asynchronous context tracking
 
-{/* <!--introduced_in=v16.4.0--> */}
-
-<Stability level="success" title="2">Stable. Compatibility with the npm ecosystem is a high priority.</Stability>
-
-{/* <!-- source_link=lib/async_hooks.js --> */}
+<AlertBox level="success" title="2">
+  Stable
+</AlertBox>
 
 ## Introduction
 
@@ -26,16 +25,6 @@ const { AsyncLocalStorage, AsyncResource } = require('node:async_hooks');
 ```
 
 ## Class: `AsyncLocalStorage`
-
-{/* <!-- YAML
-added:
- - v13.10.0
- - v12.17.0
-changes:
- - version: v16.4.0
-   pr-url: https://github.com/nodejs/node/pull/37675
-   description: AsyncLocalStorage is now Stable. Previously, it had been Experimental.
---> */}
 
 This class creates stores that stay coherent through asynchronous operations.
 
@@ -75,8 +64,8 @@ http.get('http://localhost:8080');
 http.get('http://localhost:8080');
 // Prints:
 //   0: start
-//   0: finish
 //   1: start
+//   0: finish
 //   1: finish
 ```
 
@@ -107,8 +96,8 @@ http.get('http://localhost:8080');
 http.get('http://localhost:8080');
 // Prints:
 //   0: start
-//   0: finish
 //   1: start
+//   0: finish
 //   1: finish
 ```
 
@@ -118,69 +107,24 @@ with each other's data.
 
 ### `new AsyncLocalStorage([options])`
 
-{/* <!-- YAML
-added:
- - v13.10.0
- - v12.17.0
-changes:
- - version: v24.0.0
-   pr-url: https://github.com/nodejs/node/pull/57766
-   description: Add `defaultValue` and `name` options.
- - version:
-    - v19.7.0
-    - v18.16.0
-   pr-url: https://github.com/nodejs/node/pull/46386
-   description: Removed experimental onPropagate option.
- - version:
-    - v19.2.0
-    - v18.13.0
-   pr-url: https://github.com/nodejs/node/pull/45386
-   description: Add option onPropagate.
---> */}
-
-* `options` \{Object}
-  * `defaultValue` \{any} The default value to be used when no store is provided.
-  * `name` \{string} A name for the `AsyncLocalStorage` value.
+* `options` [`<Object>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `defaultValue` [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The default value to be used when no store is provided.
+  * `name` [`<string>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A name for the `AsyncLocalStorage` value.
 
 Creates a new instance of `AsyncLocalStorage`. Store is only provided within a
 `run()` call or after an `enterWith()` call.
 
 ### Static method: `AsyncLocalStorage.bind(fn)`
 
-{/* <!-- YAML
-added:
- - v19.8.0
- - v18.16.0
-changes:
- - version:
-    - v23.11.0
-    - v22.15.0
-   pr-url: https://github.com/nodejs/node/pull/57510
-   description: Marking the API stable.
---> */}
-
-* `fn` \{Function} The function to bind to the current execution context.
-* Returns: \{Function} A new function that calls `fn` within the captured
+* `fn` [`<Function>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current execution context.
+* Returns: [`<Function>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A new function that calls `fn` within the captured
   execution context.
 
 Binds the given function to the current execution context.
 
 ### Static method: `AsyncLocalStorage.snapshot()`
 
-{/* <!-- YAML
-added:
- - v19.8.0
- - v18.16.0
-changes:
- - version:
-    - v23.11.0
-    - v22.15.0
-   pr-url: https://github.com/nodejs/node/pull/57510
-   description: Marking the API stable.
---> */}
-
-* Returns: \{Function} A new function with the signature
-  `(fn: (...args) : R, ...args) : R`.
+* Returns: [`<Function>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A new function with the signature `(fn: (...args) : R, ...args) : R`.
 
 Captures the current execution context and returns a function that accepts a
 function as an argument. Whenever the returned function is called, it
@@ -209,13 +153,9 @@ console.log(asyncLocalStorage.run(321, () => foo.get())); // returns 123
 
 ### `asyncLocalStorage.disable()`
 
-{/* <!-- YAML
-added:
- - v13.10.0
- - v12.17.0
---> */}
-
-<Stability level="warning" title="1">Experimental. The feature is not subject to semantic versioning rules.</Stability>
+<AlertBox level="warning" title="1">
+  Experimental
+</AlertBox>
 
 Disables the instance of `AsyncLocalStorage`. All subsequent calls
 to `asyncLocalStorage.getStore()` will return `undefined` until
@@ -234,13 +174,7 @@ in the current process.
 
 ### `asyncLocalStorage.getStore()`
 
-{/* <!-- YAML
-added:
- - v13.10.0
- - v12.17.0
---> */}
-
-* Returns: \{any}
+* Returns: [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Returns the current store.
 If called outside of an asynchronous context initialized by
@@ -249,15 +183,11 @@ returns `undefined`.
 
 ### `asyncLocalStorage.enterWith(store)`
 
-{/* <!-- YAML
-added:
- - v13.11.0
- - v12.17.0
---> */}
+<AlertBox level="warning" title="1">
+  Experimental
+</AlertBox>
 
-<Stability level="warning" title="1">Experimental. The feature is not subject to semantic versioning rules.</Stability>
-
-* `store` \{any}
+* `store` [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Transitions into the context for the remainder of the current
 synchronous execution and then persists the store through any following
@@ -275,7 +205,7 @@ someAsyncOperation(() => {
 });
 ```
 
-This transition will continue for the _entire_ synchronous execution.
+This transition will continue for the *entire* synchronous execution.
 This means that if, for example, the context is entered within an event
 handler subsequent event handlers will also run within that context unless
 specifically bound to another context with an `AsyncResource`. That is why
@@ -299,25 +229,15 @@ asyncLocalStorage.getStore(); // Returns the same object
 
 ### `asyncLocalStorage.name`
 
-{/* <!-- YAML
-added: v24.0.0
---> */}
-
-* \{string}
+* [`<string>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The name of the `AsyncLocalStorage` instance if provided.
 
 ### `asyncLocalStorage.run(store, callback[, ...args])`
 
-{/* <!-- YAML
-added:
- - v13.10.0
- - v12.17.0
---> */}
-
-* `store` \{any}
-* `callback` \{Function}
-* `...args` \{any}
+* `store` [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
+* `callback` [`<Function>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `...args` [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Runs a function synchronously within a context and returns its
 return value. The store is not accessible outside of the callback function.
@@ -349,16 +269,12 @@ try {
 
 ### `asyncLocalStorage.exit(callback[, ...args])`
 
-{/* <!-- YAML
-added:
- - v13.10.0
- - v12.17.0
---> */}
+<AlertBox level="warning" title="1">
+  Experimental
+</AlertBox>
 
-<Stability level="warning" title="1">Experimental. The feature is not subject to semantic versioning rules.</Stability>
-
-* `callback` \{Function}
-* `...args` \{any}
+* `callback` [`<Function>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `...args` [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Runs a function synchronously outside of a context and returns its
 return value. The store is not accessible within the callback function or
@@ -410,10 +326,10 @@ In most cases, `AsyncLocalStorage` works without issues. In rare situations, the
 current store is lost in one of the asynchronous operations.
 
 If your code is callback-based, it is enough to promisify it with
-[`util.promisify()`][] so it starts working with native promises.
+[`util.promisify()`](util.html#utilpromisifyoriginal) so it starts working with native promises.
 
 If you need to use a callback-based API or your code assumes
-a custom thenable implementation, use the [`AsyncResource`][] class
+a custom thenable implementation, use the [`AsyncResource`](#class-asyncresource) class
 to associate the asynchronous operation with the correct execution context.
 Find the function call responsible for the context loss by logging the content
 of `asyncLocalStorage.getStore()` after the calls you suspect are responsible
@@ -421,13 +337,6 @@ for the loss. When the code logs `undefined`, the last callback called is
 probably responsible for the context loss.
 
 ## Class: `AsyncResource`
-
-{/* <!-- YAML
-changes:
- - version: v16.4.0
-   pr-url: https://github.com/nodejs/node/pull/37675
-   description: AsyncResource is now Stable. Previously, it had been Experimental.
---> */}
 
 The class `AsyncResource` is designed to be extended by the embedder's async
 resources. Using this, users can easily trigger the lifetime events of their
@@ -495,11 +404,11 @@ asyncResource.triggerAsyncId();
 
 ### `new AsyncResource(type[, options])`
 
-* `type` \{string} The type of async event.
-* `options` \{Object}
-  * `triggerAsyncId` \{number} The ID of the execution context that created this
-    async event. **Default:** `executionAsyncId()`.
-  * `requireManualDestroy` \{boolean} If set to `true`, disables `emitDestroy`
+* `type` [`<string>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The type of async event.
+* `options` [`<Object>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `triggerAsyncId` [`<number>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The ID of the execution context that created this
+    async event. **Default:** `executionAsyncId()`.
+  * `requireManualDestroy` [`<boolean>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If set to `true`, disables `emitDestroy`
     when the object is garbage collected. This usually does not need to be set
     (even if `emitDestroy` is called manually), unless the resource's `asyncId`
     is retrieved and the sensitive API's `emitDestroy` is called with it.
@@ -531,72 +440,25 @@ class DBQuery extends AsyncResource {
 
 ### Static method: `AsyncResource.bind(fn[, type[, thisArg]])`
 
-{/* <!-- YAML
-added:
-  - v14.8.0
-  - v12.19.0
-changes:
-  - version: v20.0.0
-    pr-url: https://github.com/nodejs/node/pull/46432
-    description: The `asyncResource` property added to the bound function
-                 has been deprecated and will be removed in a future
-                 version.
-  - version:
-    - v17.8.0
-    - v16.15.0
-    pr-url: https://github.com/nodejs/node/pull/42177
-    description: Changed the default when `thisArg` is undefined to use `this`
-                 from the caller.
-  - version: v16.0.0
-    pr-url: https://github.com/nodejs/node/pull/36782
-    description: Added optional thisArg.
---> */}
-
-* `fn` \{Function} The function to bind to the current execution context.
-* `type` \{string} An optional name to associate with the underlying
-  `AsyncResource`.
-* `thisArg` \{any}
+* `fn` [`<Function>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current execution context.
+* `type` [`<string>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) An optional name to associate with the underlying `AsyncResource`.
+* `thisArg` [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Binds the given function to the current execution context.
 
 ### `asyncResource.bind(fn[, thisArg])`
 
-{/* <!-- YAML
-added:
-  - v14.8.0
-  - v12.19.0
-changes:
-  - version: v20.0.0
-    pr-url: https://github.com/nodejs/node/pull/46432
-    description: The `asyncResource` property added to the bound function
-                 has been deprecated and will be removed in a future
-                 version.
-  - version:
-    - v17.8.0
-    - v16.15.0
-    pr-url: https://github.com/nodejs/node/pull/42177
-    description: Changed the default when `thisArg` is undefined to use `this`
-                 from the caller.
-  - version: v16.0.0
-    pr-url: https://github.com/nodejs/node/pull/36782
-    description: Added optional thisArg.
---> */}
-
-* `fn` \{Function} The function to bind to the current `AsyncResource`.
-* `thisArg` \{any}
+* `fn` [`<Function>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current `AsyncResource`.
+* `thisArg` [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Binds the given function to execute to this `AsyncResource`'s scope.
 
 ### `asyncResource.runInAsyncScope(fn[, thisArg, ...args])`
 
-{/* <!-- YAML
-added: v9.6.0
---> */}
-
-* `fn` \{Function} The function to call in the execution context of this async
+* `fn` [`<Function>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to call in the execution context of this async
   resource.
-* `thisArg` \{any} The receiver to be used for the function call.
-* `...args` \{any} Optional arguments to pass to the function.
+* `thisArg` [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The receiver to be used for the function call.
+* `...args` [`<any>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional arguments to pass to the function.
 
 Call the provided function with the provided arguments in the execution context
 of the async resource. This will establish the context, trigger the AsyncHooks
@@ -605,7 +467,7 @@ then restore the original execution context.
 
 ### `asyncResource.emitDestroy()`
 
-* Returns: \{AsyncResource} A reference to `asyncResource`.
+* Returns: [`<AsyncResource>`](async_hooks.html#class-asyncresource) A reference to `asyncResource`.
 
 Call all `destroy` hooks. This should only ever be called once. An error will
 be thrown if it is called more than once. This **must** be manually called. If
@@ -614,11 +476,11 @@ never be called.
 
 ### `asyncResource.asyncId()`
 
-* Returns: \{number} The unique `asyncId` assigned to the resource.
+* Returns: [`<number>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The unique `asyncId` assigned to the resource.
 
 ### `asyncResource.triggerAsyncId()`
 
-* Returns: \{number} The same `triggerAsyncId` that is passed to the
+* Returns: [`<number>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The same `triggerAsyncId` that is passed to the
   `AsyncResource` constructor.
 
 <a id="async-resource-worker-pool"></a>
@@ -626,7 +488,7 @@ never be called.
 ### Using `AsyncResource` for a `Worker` thread pool
 
 The following example shows how to use the `AsyncResource` class to properly
-provide async tracking for a [`Worker`][] pool. Other resource pools, such as
+provide async tracking for a [`Worker`](worker_threads.html#class-worker) pool. Other resource pools, such as
 database connection pools, can follow a similar model.
 
 Assuming that the task is adding two numbers, using a file named
@@ -867,13 +729,13 @@ for (let i = 0; i < 10; i++) {
 
 ### Integrating `AsyncResource` with `EventEmitter`
 
-Event listeners triggered by an [`EventEmitter`][] may be run in a different
+Event listeners triggered by an [`EventEmitter`](events.html#class-eventemitter) may be run in a different
 execution context than the one that was active when `eventEmitter.on()` was
 called.
 
 The following example shows how to use the `AsyncResource` class to properly
 associate an event listener with the correct execution context. The same
-approach can be applied to a [`Stream`][] or a similar event-driven class.
+approach can be applied to a [`Stream`](stream.html#stream) or a similar event-driven class.
 
 ```mjs
 import { createServer } from 'node:http';
@@ -905,8 +767,3 @@ const server = createServer((req, res) => {
 }).listen(3000);
 ```
 
-[`AsyncResource`]: #class-asyncresource
-[`EventEmitter`]: events.md#class-eventemitter
-[`Stream`]: stream.md#stream
-[`Worker`]: worker_threads.md#class-worker
-[`util.promisify()`]: util.md#utilpromisifyoriginal
