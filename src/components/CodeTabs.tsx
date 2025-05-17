@@ -1,6 +1,6 @@
-import CodeTabs from '@node-core/ui-components/Common/CodeTabs';
-import * as TabsPrimitive from '@radix-ui/react-tabs';
-import type { FC, ReactElement } from 'react';
+import CodeTabs from "@node-core/ui-components/Common/CodeTabs";
+import * as TabsPrimitive from "@radix-ui/react-tabs";
+import type { FC, ReactElement } from "react";
 
 type MDXCodeTabsProps = {
   children: Array<ReactElement<unknown>>;
@@ -13,11 +13,11 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   languages: rawLanguages,
   displayNames: rawDisplayNames,
   children: codes,
-  defaultTab = '0',
+  defaultTab = "0",
   ...props
 }) => {
-  const languages = rawLanguages.split('|');
-  const displayNames = rawDisplayNames?.split('|') ?? [];
+  const languages = rawLanguages.split("|");
+  const displayNames = rawDisplayNames?.split("|") ?? [];
 
   const tabs = languages.map((language, index) => {
     const displayName = displayNames[index];
