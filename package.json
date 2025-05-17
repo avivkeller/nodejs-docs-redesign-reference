@@ -1,0 +1,31 @@
+{
+  "scripts": {
+    "build": "webpack && node dist/bundle.js"
+  },
+  "dependencies": {
+    "@node-core/mdx": "github:nodejs/nodejs.org#mdx-pkg&path:/packages/mdx",
+    "@node-core/ui-components": "github:nodejs/nodejs.org#path:/packages/ui-components",
+    "@radix-ui/react-tabs": "^1.1.11",
+    "@tailwindcss/postcss": "^4.1.7",
+    "@types/node": "^22.15.18",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@types/webpack": "^5.28.5",
+    "css-loader": "^7.1.2",
+    "cssnano": "^7.0.7",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
+    "raw-loader": "^4.0.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^4.1.7",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "vfile": "^6.0.3",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1"
+  }
+}
