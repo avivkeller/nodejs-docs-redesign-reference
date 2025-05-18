@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "webpack && node dist/bundle.js"
+    "build": "node scripts/build.mjs"
   },
   "dependencies": {
     "@node-core/mdx": "github:nodejs/nodejs.org#mdx-pkg&path:/packages/mdx",
@@ -17,7 +17,6 @@
     "mini-css-extract-plugin": "^2.9.2",
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
-    "raw-loader": "^4.0.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "style-loader": "^4.0.0",

@@ -18,10 +18,6 @@ const config: Configuration = {
         },
       },
       {
-        test: /\.html$/,
-        use: "raw-loader",
-      },
-      {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,

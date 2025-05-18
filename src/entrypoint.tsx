@@ -4,8 +4,6 @@ import { readFileSync, writeFileSync } from "fs";
 import compile from "@node-core/mdx/compiler";
 import { VFile } from "vfile";
 
-import html from "./template.html";
-
 import CodeTabs from "./components/CodeTabs";
 import CodeBox from "./components/CodeBox";
 import Blockquote from "@node-core/ui-components/Common/Blockquote";
@@ -15,6 +13,7 @@ import "@node-core/ui-components/styles/index.css";
 
 async function build() {
   const mdx = readFileSync("src/content.mdx", "utf-8");
+  const html = readFileSync("src/template.html", "utf-8");
   const { content: Comp } = await compile(new VFile(mdx), "mdx", {
     CodeTabs,
     pre: CodeBox,

@@ -14,7 +14,7 @@ If you're interested in contributing to Node.js documentation tooling more broad
 To build the project and generate a static HTML file:
 
 ```bash
-pnpm build
+node build.mjs
 ```
 
 This process will:
