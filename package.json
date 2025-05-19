@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "webpack && node dist/bundle.js"
   },
   "dependencies": {
+    "@babel/generator": "^7.27.1",
     "@node-core/mdx": "github:nodejs/nodejs.org#mdx-pkg&path:/packages/mdx",
     "@node-core/ui-components": "github:nodejs/nodejs.org#path:/packages/ui-components",
     "@node-core/website-i18n": "github:nodejs/nodejs.org#path:packages/i18n",
@@ -24,8 +25,10 @@
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
-    "vfile": "^6.0.3",
     "webpack": "^5.99.8",
     "webpack-cli": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/babel__generator": "^7.27.0"
   }
 }
