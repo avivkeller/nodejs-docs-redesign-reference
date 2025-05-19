@@ -1,34 +1,36 @@
 {
   "scripts": {
-    "build": "webpack && node dist/bundle.js"
+    "build": "webpack"
   },
   "dependencies": {
-    "@babel/generator": "^7.27.1",
     "@node-core/mdx": "github:nodejs/nodejs.org#mdx-pkg&path:/packages/mdx",
     "@node-core/ui-components": "github:nodejs/nodejs.org#path:/packages/ui-components",
     "@node-core/website-i18n": "github:nodejs/nodejs.org#path:packages/i18n",
     "@radix-ui/react-tabs": "^1.1.11",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.27.1",
     "@tailwindcss/postcss": "^4.1.7",
+    "@types/babel__generator": "^7.27.0",
     "@types/node": "^22.15.18",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
     "@types/webpack": "^5.28.5",
     "css-loader": "^7.1.2",
     "cssnano": "^7.0.7",
+    "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.7",
+    "terser-webpack-plugin": "^5.3.14",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "webpack": "^5.99.8",
     "webpack-cli": "^6.0.1"
-  },
-  "devDependencies": {
-    "@types/babel__generator": "^7.27.0"
   }
 }
