@@ -49,9 +49,7 @@ const config: Configuration = {
 
   optimization: {
     minimize: true,
-    minimizer: [
-      new TerserPlugin(),
-    ],
+    minimizer: [new TerserPlugin()],
   },
 
   output: {

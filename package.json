@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "build": "webpack"
+    "build": "node scripts/build.mjs"
   },
   "dependencies": {
-    "@node-core/mdx": "github:nodejs/nodejs.org#mdx-pkg&path:/packages/mdx",
+    "@heroicons/react": "^2.2.0",
+    "@node-core/rehype-shiki": "github:nodejs/nodejs.org#pkg/rehype-shiki&path:/packages/rehype-shiki",
     "@node-core/ui-components": "github:nodejs/nodejs.org#path:/packages/ui-components",
     "@node-core/website-i18n": "github:nodejs/nodejs.org#path:packages/i18n",
     "@radix-ui/react-tabs": "^1.1.11",
@@ -14,7 +15,7 @@
     "@babel/generator": "^7.27.1",
     "@tailwindcss/postcss": "^4.1.7",
     "@types/babel__generator": "^7.27.0",
-    "@types/node": "^22.15.18",
+    "@types/node": "^22.15.19",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
     "@types/webpack": "^5.28.5",

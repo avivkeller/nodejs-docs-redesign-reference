@@ -11,6 +11,6 @@
     "outDir": "dist",
     "moduleResolution": "bundler"
   },
-  "include": ["**/*.ts", "**/*.tsx", "index.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "index.d.ts", "src/content.tsx.tpl"],
   "exclude": ["node_modules"]
 }
